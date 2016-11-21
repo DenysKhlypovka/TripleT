@@ -44,7 +44,9 @@ bool GameOver::init()
 
 	this->addChild(backgroundSprite);
 
-	auto Result = LabelTTF::create("", "fonts/Marker Felt.ttf", 26);
+	auto Result = LabelTTF::create();// NULL, "fonts/Marker Felt.ttf", 26);
+	Result->setFontName("fonts/Marker Felt.ttf");
+	Result->setFontSize(26);
 
 	if (Winner == 'O')
 		Result->setString("X Wins");

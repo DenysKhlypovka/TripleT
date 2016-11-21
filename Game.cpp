@@ -15,18 +15,6 @@ Game::Game(cocos2d::Layer *layer)
 
 void Game::PlaceObj(cocos2d::Layer *layer, int touchX, int touchY)
 {
-	Sprite* Obj = Sprite::create();
-	if (turn == 'X')
-	{
-		turn = 'O';
-		Obj = Sprite::create("X.png");
-	}
-	else if (turn == 'O')
-	{
-		Obj = Sprite::create("O.png");
-		turn = 'X';
-	}
-
 	//Obj->setPosition(Point(x, y));
 	//layer->addChild(Obj);
 
@@ -60,6 +48,19 @@ void Game::PlaceObj(cocos2d::Layer *layer, int touchX, int touchY)
 
 	if (ar[(int)coeffX][(int)coeffY] == '0')
 	{
+
+		Sprite* Obj = Sprite::create();
+		if (turn == 'X')
+		{
+			turn = 'O';
+			Obj = Sprite::create("X.png");
+		}
+		else if (turn == 'O')
+		{
+			Obj = Sprite::create("O.png");
+			turn = 'X';
+		}
+
 		ar[(int)coeffX][(int)coeffY] = turn;
 
 		int coordX = (1 + coeffX * 2) * gridSize.width / 6 + gridBeginsX;

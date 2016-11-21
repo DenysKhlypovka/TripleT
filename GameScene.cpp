@@ -72,7 +72,7 @@ bool GameScene::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event)
 			GO = 'D';
 
 		auto scene = GameOver::createScene(GO);
-		Director::getInstance()->replaceScene((TransitionFade::create(TRANSITION_TIME, scene)));
+		Director::getInstance()->replaceScene((TransitionFade::create(GAME_OVER_TRANSITION_TIME	, scene)));
 	
 	}
 
